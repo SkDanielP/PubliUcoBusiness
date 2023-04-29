@@ -7,7 +7,7 @@ import co.edu.uco.publiuco.crosscutting.utils.UtilText;
 import co.edu.uco.publiuco.crosscutting.utils.UtilUUID;
 
 
-public class TipoRelacionInstitucionDomain {
+public final class TipoRelacionInstitucionDomain {
 	private UUID identificador;
 	private String nombre;
 	private String descripcion;
@@ -15,7 +15,7 @@ public class TipoRelacionInstitucionDomain {
 	
 	
 	
-	public TipoRelacionInstitucionDomain(final UUID identificador, final String nombre, final String descripcion, final TipoRelacionInstitucionDomain estado) {
+	public TipoRelacionInstitucionDomain(final UUID identificador, final String nombre, final String descripcion, final EstadoTipoRelacionInstitucionDomain estado) {
 		super();
 		setIdentificador(identificador);
 		setNombre(nombre);
@@ -48,7 +48,7 @@ public class TipoRelacionInstitucionDomain {
 	
 	
 	private final void setDescripcion(final String descripcion) {
-		this.descripcion = UtilText.getUtilText().applyTrim(nombre);
+		this.descripcion = UtilText.getUtilText().applyTrim(descripcion);
 		
 	}
 
@@ -58,13 +58,10 @@ public class TipoRelacionInstitucionDomain {
 	}
 
 
-	private final void setEstado(final TipoRelacionInstitucionDomain estado) {
-		this.estado = UtilObject.getDefault(estado, TipoRelacionInstitucionDomain.getDefaultObject());
+	private final void setEstado(final EstadoTipoRelacionInstitucionDomain estado) {
+		this.estado = UtilObject.getDefault(estado, EstadoTipoRelacionInstitucionDomain.getDefaultObject());
 		
 	}
 	
-	
-
-
 	
 }
