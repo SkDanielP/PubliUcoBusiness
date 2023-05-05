@@ -1,6 +1,8 @@
 package co.edu.uco.business.domain.assembler.concrete;
 
 
+import java.util.List;
+
 import co.edu.uco.business.domain.TipoRelacionInstitucionDomain;
 import co.edu.uco.business.domain.assembler.Assembler;
 import co.edu.uco.publiuco.dto.TipoRelacionInstitucionDTO;
@@ -17,19 +19,22 @@ public final class TipoRelacionInstitucionAssembler implements Assembler<TipoRel
 
 	@Override
 	public TipoRelacionInstitucionDomain toDomainFromDto(TipoRelacionInstitucionDTO dto) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public TipoRelacionInstitucionEntity toEntityFromDomain(TipoRelacionInstitucionDomain domain) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public TipoRelacionInstitucionDomain toDomainFromEntity(TipoRelacionInstitucionEntity entity) {
-		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<TipoRelacionInstitucionDomain> toDomainListFromEntities(
+			List<TipoRelacionInstitucionEntity> entityList) {
 		return null;
 	}
 
