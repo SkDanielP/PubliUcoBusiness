@@ -75,4 +75,6 @@ public final class AdministradorCategoriaDomain {
     private void setEstado(final EstadoAdministradorCategoriaDomain estado) {
         this.estado = estado;
     }
+
+
 }

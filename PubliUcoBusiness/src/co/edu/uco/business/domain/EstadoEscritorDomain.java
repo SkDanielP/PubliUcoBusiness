@@ -5,27 +5,27 @@ import java.util.UUID;
 import co.edu.uco.publiuco.crosscutting.utils.UtilText;
 import co.edu.uco.publiuco.crosscutting.utils.UtilUUID;
 
-public final class EstadoEscritorEntity {
-    private static final EstadoEscritorEntity DEFAULT_OBJECT = new EstadoEscritorEntity();
+public final class EstadoEscritorDomain {
+    private static final EstadoEscritorDomain DEFAULT_OBJECT = new EstadoEscritorDomain();
     private UUID identificador;
     private String nombre;
     private String descripcion;
 
-    private EstadoEscritorEntity() {
+    private EstadoEscritorDomain() {
         super();
         setIdentificador(UtilUUID.DEFAULT_UUID);
         setNombre(UtilText.getUtilText().getDefaultValue());
         setDescripcion(UtilText.EMPTY);
     }
 
-    public EstadoEscritorEntity(UUID identificador, String nombre, String descripcion) {
+    public EstadoEscritorDomain(UUID identificador, String nombre, String descripcion) {
         super();
         setIdentificador(identificador);
         setNombre(nombre);
         setDescripcion(descripcion);
     }
 
-    public static EstadoEscritorEntity getDefaultObject() {
+    public static EstadoEscritorDomain getDefaultObject() {
         return DEFAULT_OBJECT;
     }
 
