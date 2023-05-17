@@ -19,7 +19,7 @@ public final class EstadoTipoRelacionFacadeImpl  implements EstadoTipoRelacionIn
 	private final DAOFactory daoFactory;
 	private final EstadoTipoRelacionInstitucionBusiness business; 
 	
-	EstadoTipoRelacionFacadeImpl(){
+	public EstadoTipoRelacionFacadeImpl(){
 		daoFactory = DAOFactory.getFactory(Factory.SQLSERVER);
 		business = new EstadoTipoRelacionInstitucionBusinessImpl(daoFactory);
 	}
