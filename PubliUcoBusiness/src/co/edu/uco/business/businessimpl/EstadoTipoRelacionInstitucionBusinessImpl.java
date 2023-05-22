@@ -28,7 +28,7 @@ public final class EstadoTipoRelacionInstitucionBusinessImpl implements EstadoTi
 		
 		do {
 			identificador = UtilUUID.generateNewUUID();
-			entityTmp = new EstadoTipoRelacionInstitucionEntity(identificador);
+			entityTmp = EstadoTipoRelacionInstitucionEntity.createWithIdentificador(identificador);
 			result = daoFactory.getEstadoTipoRelacionInstitucionDAO().read(entityTmp);
 		} while (!result.isEmpty());
 
