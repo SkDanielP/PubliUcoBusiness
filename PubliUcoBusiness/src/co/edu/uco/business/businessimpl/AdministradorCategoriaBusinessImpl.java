@@ -19,25 +19,25 @@ public final class AdministradorCategoriaBusinessImpl implements AdministradorCa
 	@Override
 	public void register(AdministradorCategoriaDomain domain) {
 		AdministradorCategoriaEntity entity = AdministradorCategoriaAssembler.getInstance().toEntityFromDomain(domain);
-		daoFactory.getAdministradorCategoriaDAO().create(entity);
+		daoFactory.getAdmniAdministradorCategoriaDAO().create(entity);
 	}
 
 	@Override
 	public List<AdministradorCategoriaDomain> list(AdministradorCategoriaDomain domain) {
 		AdministradorCategoriaEntity entity = AdministradorCategoriaAssembler.getInstance().toEntityFromDomain(domain);
-		List<AdministradorCategoriaEntity> result = daoFactory.getAdministradorCategoriaDAO().read(entity);
+		List<AdministradorCategoriaEntity> result = daoFactory.getAdmniAdministradorCategoriaDAO().read(entity);
 		return null;
 	}
 
 	@Override
 	public void modify(AdministradorCategoriaDomain domain) {
 		AdministradorCategoriaEntity entity = AdministradorCategoriaAssembler.getInstance().toEntityFromDomain(domain);
-		daoFactory.getAdministradorCategoriaDAO().update(entity);
+		daoFactory.getAdmniAdministradorCategoriaDAO().update(entity);
 	}
 
 	@Override
 	public void drop(AdministradorCategoriaDomain domain) {
 		AdministradorCategoriaEntity entity = AdministradorCategoriaAssembler.getInstance().toEntityFromDomain(domain);
-		daoFactory.getAdministradorCategoriaDAO().delete(entity);
+		daoFactory.getAdmniAdministradorCategoriaDAO().delete(entity);
 	}
 }

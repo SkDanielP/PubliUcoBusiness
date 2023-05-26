@@ -4,6 +4,7 @@ import java.util.List;
 
 import co.edu.uco.business.business.PublicacionBusiness;
 import co.edu.uco.business.domain.PublicacionDomain;
+import co.edu.uco.business.domain.assembler.concrete.PublicacionAssembler;
 import co.edu.uco.publiuco.data.dao.factory.DAOFactory;
 import co.edu.uco.publiuco.entities.PublicacionEntity;
 

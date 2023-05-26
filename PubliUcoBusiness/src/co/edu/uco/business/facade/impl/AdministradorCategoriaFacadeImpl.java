@@ -8,6 +8,7 @@ import co.edu.uco.business.domain.AdministradorCategoriaDomain;
 import co.edu.uco.business.domain.assembler.concrete.AdministradorCategoriaAssembler;
 import co.edu.uco.business.facade.AdministradorCategoriaFacade;
 import co.edu.uco.publiuco.crosscutting.exception.PubliucoBussinesException;
+import co.edu.uco.publiuco.crosscutting.exception.PubliucoException;
 import co.edu.uco.publiuco.data.dao.factory.DAOFactory;
 import co.edu.uco.publiuco.data.dao.factory.Factory;
 import co.edu.uco.publiuco.dto.AdministradorCategoriaDTO;

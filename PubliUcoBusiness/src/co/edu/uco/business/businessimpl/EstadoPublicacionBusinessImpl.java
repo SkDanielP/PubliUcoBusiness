@@ -19,25 +19,25 @@ public final class EstadoPublicacionBusinessImpl implements EstadoPublicacionBus
 	@Override
 	public void register(EstadoPublicacionDomain domain) {
 		EstadoPublicacionEntity entity = EstadoPublicacionAssembler.getInstance().toEntityFromDomain(domain);
-		daoFactory.getEstadoPublicacionDAO().create(entity);
+		daoFactory.estadoPublicacionDAO().create(entity);
 	}
 
 	@Override
 	public List<EstadoPublicacionDomain> list(EstadoPublicacionDomain domain) {
 		EstadoPublicacionEntity entity = EstadoPublicacionAssembler.getInstance().toEntityFromDomain(domain);
-		List<EstadoPublicacionEntity> result = daoFactory.getEstadoPublicacionDAO().read(entity);
+		List<EstadoPublicacionEntity> result = daoFactory.estadoPublicacionDAO().read(entity);
 		return null;
 	}
 
 	@Override
 	public void modify(EstadoPublicacionDomain domain) {
 		EstadoPublicacionEntity entity = EstadoPublicacionAssembler.getInstance().toEntityFromDomain(domain);
-		daoFactory.getEstadoPublicacionDAO().update(entity);
+		daoFactory.estadoPublicacionDAO().update(entity);
 	}
 
 	@Override
 	public void drop(EstadoPublicacionDomain domain) {
 		EstadoPublicacionEntity entity = EstadoPublicacionAssembler.getInstance().toEntityFromDomain(domain);
-		daoFactory.getEstadoPublicacionDAO().delete(entity);
+		daoFactory.estadoPublicacionDAO().delete(entity);
 	}
 }

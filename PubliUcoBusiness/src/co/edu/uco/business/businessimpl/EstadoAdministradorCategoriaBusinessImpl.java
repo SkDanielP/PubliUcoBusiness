@@ -19,25 +19,25 @@ public final class EstadoAdministradorCategoriaBusinessImpl implements EstadoAdm
 	@Override
 	public void register(EstadoAdministradorCategoriaDomain domain) {
 		EstadoAdministradorCategoriaEntity entity = EstadoAdministradorCategoriaAssembler.getInstance().toEntityFromDomain(domain);
-		daoFactory.getEstadoAdministradorCategoriaDAO().create(entity);
+		daoFactory.getAdministradorCategoriaDAO().create(entity);
 	}
 
 	@Override
 	public List<EstadoAdministradorCategoriaDomain> list(EstadoAdministradorCategoriaDomain domain) {
 		EstadoAdministradorCategoriaEntity entity = EstadoAdministradorCategoriaAssembler.getInstance().toEntityFromDomain(domain);
-		List<EstadoAdministradorCategoriaEntity> result = daoFactory.getEstadoAdministradorCategoriaDAO().read(entity);
+		List<EstadoAdministradorCategoriaEntity> result = daoFactory.getAdministradorCategoriaDAO().read(entity);
 		return null;
 	}
 
 	@Override
 	public void modify(EstadoAdministradorCategoriaDomain domain) {
 		EstadoAdministradorCategoriaEntity entity = EstadoAdministradorCategoriaAssembler.getInstance().toEntityFromDomain(domain);
-		daoFactory.getEstadoAdministradorCategoriaDAO().update(entity);
+		daoFactory.getAdministradorCategoriaDAO().update(entity);
 	}
 
 	@Override
 	public void drop(EstadoAdministradorCategoriaDomain domain) {
 		EstadoAdministradorCategoriaEntity entity = EstadoAdministradorCategoriaAssembler.getInstance().toEntityFromDomain(domain);
-		daoFactory.getEstadoAdministradorCategoriaDAO().delete(entity);
+		daoFactory.getAdministradorCategoriaDAO().delete(entity);
 	}
 }

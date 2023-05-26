@@ -11,34 +11,55 @@ import co.edu.uco.publiuco.entities.AdministradorCategoriaEntity;
 public final class AdministradorCategoriaAssembler
         implements Assembler<AdministradorCategoriaDomain, AdministradorCategoriaDTO, AdministradorCategoriaEntity> {
 
-	@Override
-	public AdministradorCategoriaDTO toDtoFromDomain(AdministradorCategoriaDomain domain) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	  private static final AdministradorCategoriaAssembler INSTANCE = new AdministradorCategoriaAssembler();
 
-	@Override
-	public AdministradorCategoriaDomain toDomainFromDto(AdministradorCategoriaDTO dto) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	    private AdministradorCategoriaAssembler() {
+	        super();
+	    }
 
-	@Override
-	public AdministradorCategoriaEntity toEntityFromDomain(AdministradorCategoriaDomain domain) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	    public static final AdministradorCategoriaAssembler getInstance() {
+	        return INSTANCE;
+	    }
 
-	@Override
-	public AdministradorCategoriaDomain toDomainFromEntity(AdministradorCategoriaEntity entity) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	    @Override
+	    public AdministradorCategoriaDTO toDtoFromDomain(AdministradorCategoriaDomain domain) {
+	        return AdministradorCategoriaDTO.create()
+	                .setIdentificador(domain.getIdentificador())
+	                .setNombre(domain.getNombre())
+	                .setCorreo(domain.getCorreo())
+	                .setTipoRelacionInstitucion(TipoRelacionInstitucionAssembler.getInstance().toDtoFromDomain(domain.getTipoRelacionInstitucion()))
+	                .setEstado(EstadoAdministradorCategoriaAssembler.getInstance().toDtoFromDomain(domain.getEstado()));
+	    }
 
-	@Override
-	public List<AdministradorCategoriaDomain> toDomainListFromEntities(List<AdministradorCategoriaEntity> entityList) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	    @Override
+	    public AdministradorCategoriaDomain toDomainFromDto(AdministradorCategoriaDTO dto) {
+	        return new AdministradorCategoriaDomain(dto.getIdentificador(), dto.getCorreo(), dto.getNombre(),
+	        			TipoRelacionInstitucionAssembler.getInstance().toDomainFromDto(dto.getTipoRelacionInstitucion()),
+	        			EstadoAdministradorCategoriaAssembler.getInstance().toDomainFromDto(dto.getEstado())); 
+	        		
+	    }
+
+	    @Override
+	    public AdministradorCategoriaEntity toEntityFromDomain(AdministradorCategoriaDomain domain) {
+	        return new AdministradorCategoriaEntity(domain.getIdentificador(), domain.getCorreo(), domain.getNombre(),
+	        		TipoRelacionInstitucionAssembler.getInstance().toEntityFromDomain(domain.getTipoRelacionInstitucion()),
+	        		EstadoAdministradorCategoriaAssembler.getInstance().toEntityFromDomain(domain.getEstado()));
+	        		
+	    }
+
+	    @Override
+	    public AdministradorCategoriaDomain toDomainFromEntity(AdministradorCategoriaEntity entity) {
+	        return new AdministradorCategoriaDomain(entity.getIdentificador(), entity.getCorreo(), entity.getNombre(),
+	        		TipoRelacionInstitucionAssembler.getInstance().toDomainFromEntity(entity.getTipoRelacionInstitucion()),
+	        		EstadoAdministradorCategoriaAssembler.getInstance().toDomainFromEntity(entity.getEstado()));
+	    }
+
+	    @Override
+	    public List<AdministradorCategoriaDomain> toDomainListFromEntities(List<AdministradorCategoriaEntity> entityList) {
+	        return entityList.stream()
+	                .map(entity -> toDomainFromEntity(entity))
+	                .collect(Collectors.toList());
+	    }
+
 }
 

@@ -29,7 +29,6 @@ public final class EstadoAdministradorCategoriaFacadeImpl implements EstadoAdmin
             daoFactory.iniciarTransaccion();
             final EstadoAdministradorCategoriaDomain domain = EstadoAdministradorCategoriaAssembler.getInstance().toDomainFromDto(dto);
 
-            // Perform any necessary operations before registering
 
             business.register(domain);
 

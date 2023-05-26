@@ -7,6 +7,7 @@ import co.edu.uco.business.domain.LectorDomain;
 import co.edu.uco.business.domain.assembler.concrete.LectorAssembler;
 import co.edu.uco.publiuco.data.dao.factory.DAOFactory;
 import co.edu.uco.publiuco.entities.LectorEntity;
+import co.edu.uco.publiuco.entities.PublicacionEntity;
 
 public final class LectorBusinessImpl implements LectorBusiness {
 	
@@ -26,7 +27,7 @@ public final class LectorBusinessImpl implements LectorBusiness {
 	public List<LectorDomain> list(LectorDomain domain) {
 		LectorEntity entity = LectorAssembler.getInstance().toEntityFromDomain(domain);
 		List<LectorEntity> result = daoFactory.getLectorDAO().read(entity);
-		return LectorAssembler.getInstance().toDomainList(result);
+		return null;
 	}
 
 	@Override
